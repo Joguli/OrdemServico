@@ -4,18 +4,25 @@
  * and open the template in the editor.
  */
 package br.com.infox.telas;
+import java.sql.*;
+import br.com.infox.dal.ModuloConexao;
 
 /**
  *
  * @author jogul
  */
 public class Telalogin extends javax.swing.JFrame {
-
+//Framework    
+Connection conexao = null;
+PreparedStatement pst = null;
+ResultSet rs = null;
     /**
      * Creates new form Telalogin
      */
     public Telalogin() {
         initComponents();
+        conexao = ModuloConexao.conector();
+        System.out.println(conexao);
     }
 
     /**
